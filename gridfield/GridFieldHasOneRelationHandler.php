@@ -16,7 +16,7 @@ class GridFieldHasOneRelationHandler extends GridFieldRelationHandler {
 		}
 		$this->targetObject = $hasOne;
 
-		parent::__construct($targetFragment);
+		parent::__construct(false, $targetFragment);
 	}
 
 	public function getColumnContent($gridField, $record, $columnName) {
@@ -41,5 +41,6 @@ class GridFieldHasOneRelationHandler extends GridFieldRelationHandler {
 		$id = intval("$state->RelationVal");
 		$this->onObject->{$field} = $id;
 		$this->onObject->write();
+		parent::saveGridRelation($gridField, $arguments, $data);
 	}
 }
