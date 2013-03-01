@@ -40,4 +40,21 @@ jQuery(function($) {
 			}
 		});
 	});
+	$.entwine('gridfieldrelationhandler', function($) {
+		$('#action_relationhandler-togglerel').entwine({
+			onclick: function() {
+				$('.cms-content-actions.south .Actions').hide();
+			}
+		});
+		$('#action_relationhandler-cancelrel').entwine({
+			onclick: function() {
+				$('.cms-content-actions.south .Actions').show();
+			}
+		});
+		$('#action_relationhandler-saverel').entwine({
+			onclick: function() {
+				$('.cms-content-actions.south .Actions').show();
+			}
+		});
+	});
 });
